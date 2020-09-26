@@ -1,0 +1,478 @@
+@import "./variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.125rem;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: Impact;
+    font-weight: 500;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.intro-page,
+.info-page {
+  height: 100vh;
+}
+
+.intro-page {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $titleColor;
+  //   align-items: center;
+  //   justify-content: center;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    filter: hue-rotate(20deg);
+  }
+
+  .slogan-box {
+    // background: rebeccapurple;
+    display: flex;
+    margin: auto 0;
+    justify-content: center;
+    align-items: center;
+
+    .main-slogan {
+      //   background: palegreen;
+      min-width: 50%;
+      // transform: translateX(200px);
+      margin-left: 10em;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      align-items: center;
+
+      #path-to-health {
+        font-size: 5.5rem;
+      }
+
+      #higher-quality {
+        font-size: 2.5rem;
+        font-weight: 400;
+      }
+
+      #path-to-health,
+      #higher-quality {
+        width: 100%;
+        color: $titleColor;
+      }
+    }
+  }
+}
+
+.info-page {
+  background: linear-gradient(135deg, #d3d3d3 0%, #fff 100%);
+  height: 100vh;
+
+  .info-container {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    padding: 2.5em 0;
+    margin: 0 auto;
+
+    .jars {
+      width: 50%;
+      height: 100%;
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 100%;
+        transform: translate(-100px, -80px) scale(2.2);
+      }
+
+      #tegla-2 {
+        transform: translate(100px, -40px) scale(2.2);
+      }
+    }
+
+    .paragraphs {
+      //   background-color: green;
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .welcome-p h2,
+      .about-p h2 {
+        margin-bottom: 0.5em;
+        font-size: 2.2rem;
+        color: $titleColor;
+      }
+    }
+  }
+}
+
+.main-content-page {
+  .main-wrap {
+    width: 100%;
+    background: #fffce6;
+
+    .main-container {
+      width: 80%;
+      margin: 4em auto;
+      margin-bottom: 0%;
+      padding-top: 2em;
+      padding-bottom: 5em;
+
+      .main-paragraphs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .main-p {
+          max-width: 30%;
+
+          h2 {
+            margin-bottom: 1.5em;
+            color: $titleColor;
+            font-size: 1.7rem;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+          }
+
+          p {
+            margin: 0.5em 0;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery-page {
+  width: 100%;
+  background-color: #f2f2f2;
+
+  .gallery-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 4em 0;
+
+    .images-container {
+      width: 90%;
+      margin: 4em auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 3rem;
+      grid-row-gap: 3rem;
+
+      .gallery-image {
+        filter: grayscale(0.3);
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          filter: grayscale(0);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.contact-page {
+  background-color: #f2f2f2;
+
+  .contact-container {
+    width: 80%;
+    margin: 0 auto;
+
+    .address-section {
+      margin-bottom: 2em;
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-size: 1.5rem;
+        color: $titleColor;
+      }
+    }
+
+    .form-section {
+      display: flex;
+      justify-content: space-between;
+
+      form {
+        display: block;
+        width: 50%;
+        padding: 1em 0;
+        // background: red;
+
+        .input-field {
+          display: block;
+          width: 100%;
+          margin-bottom: 2em;
+          font-size: 1.1rem;
+          padding: 0.4em;
+          border: 3px solid $titleColor;
+        }
+
+        .submit-btn {
+          background-color: $titleColor;
+          color: white;
+          cursor: pointer;
+          transform: scale(1);
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .map {
+        width: 45%;
+        min-width: 300px;
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  // height: 25vh;
+  background: $titleColor;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .social-media-widgets {
+    margin: 2em 0;
+    margin-bottom: 1.5em;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+
+    .widget {
+      text-align: center;
+      // margin: 2 em 0;
+
+      img {
+        display: block;
+        width: 30px;
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .copyrights-statement {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 2em;
+    font-weight: 400;
+  }
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: $titleColor;
+}
+
+.line {
+  width: 100%;
+  height: 0.25rem;
+  margin: 2.5em 0;
+  background: $titleColor;
+  border-radius: 5px;
+}
+
+// MEDIA QUERIES ******************************************
+
+@media (max-width: 1200px) {
+  html {
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .info-page {
+    height: auto;
+
+    .info-container {
+      flex-direction: column;
+
+      .jars {
+        // background-color: red;
+        width: 100%;
+        height: 600px;
+        margin-bottom: 3em;
+
+        img {
+          transform: translate(-100px, -180px) scale(1.5);
+        }
+
+        #tegla-2 {
+          transform: translate(100px, -140px) scale(1.5);
+        }
+      }
+
+      .paragraphs {
+        width: 100%;
+        height: 50vh;
+        justify-content: space-between;
+        .welcome-p,
+        .about-p {
+          width: 100%;
+          margin-bottom: 2em;
+        }
+      }
+    }
+  }
+
+  .main-content-page {
+    .main-paragraphs {
+      flex-direction: column;
+      align-items: center;
+      // background-color: yellow;
+
+      .main-p {
+        // background-color: red;
+        min-width: 100%;
+        margin-bottom: 4em;
+      }
+    }
+  }
+
+  .gallery-page {
+    .gallery-container {
+      .images-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 2em;
+
+        .gallery-image {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 13px;
+  }
+
+  .intro-page {
+    .slogan-box {
+      .main-slogan {
+        text-align: left;
+
+        #path-to-health {
+          font-size: 4rem;
+        }
+
+        #higher-quality {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .info-page {
+    .info-container {
+      flex-direction: column;
+
+      .jars {
+        // background-color: green;
+        width: 100%;
+        height: 600px;
+
+        img {
+          transform: translate(-100px, -60px) scale(1.8);
+        }
+
+        #tegla-2 {
+          transform: translate(100px, -20px) scale(1.8);
+        }
+      }
+    }
+  }
+
+  .gallery-page {
+    .gallery-container {
+      .images-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .contact-page {
+    .contact-container {
+      .address-section {
+        text-align: right;
+      }
+      .form-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-page {
+    .slogan-box {
+      .main-slogan {
+        text-align: left;
+
+        #path-to-health {
+          font-size: 3rem;
+        }
+
+        #higher-quality {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
